@@ -44,7 +44,8 @@ public class EnemyHealth : MonoBehaviour {
 
 	public void die(){
         GameObject.FindGameObjectWithTag("enemyManager").transform.GetComponent<EnemyManager>().rainAmount -= gameObject.transform.GetComponent<EnemyInfo>().waterAmount;
-		MoneyManager.money += gameObject.transform.GetComponent<EnemyInfo>().rewards;
+        GameObject.FindGameObjectWithTag("enemyManager").transform.GetComponent<EnemyManager>().currentEnemyNum--;
+        MoneyManager.money += gameObject.transform.GetComponent<EnemyInfo>().rewards;
 		AudioSource.PlayClipAtPoint (coins, Camera.main.transform.position);
 		Destroy (gameObject);
         KilledDrops.killedDrops += 1;
