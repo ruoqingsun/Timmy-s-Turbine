@@ -51,8 +51,10 @@ public class EnemyMoving : MonoBehaviour {
 				WaterCountManager.waterCount++;
 				waterPool.localPosition = new Vector3(-155.0f, (-20.1f + (((float)WaterCountManager.waterCount/10.0f)*(20.1f-7.5f))), 40.0f);
 				GameObject.FindGameObjectWithTag("enemyManager").transform.GetComponent<EnemyManager>().rainAmount-=gameObject.transform.GetComponent<EnemyInfo>().waterAmount;
-				//MoneyManager.money += gameObject.transform.GetComponent<EnemyInfo>().rewards;
-				Destroy(gameObject);
+                GameObject.FindGameObjectWithTag("enemyManager").transform.GetComponent<EnemyManager>().currentEnemyNum--;
+                //MoneyManager.money += gameObject.transform.GetComponent<EnemyInfo>().rewards;
+                Destroy(gameObject);
+
 				Debug.Log(WaterCountManager.waterCount);
 				return;
 			}

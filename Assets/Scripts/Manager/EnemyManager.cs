@@ -8,13 +8,18 @@ public class EnemyManager : MonoBehaviour {
 	public Transform[] spawnPoints;
 	public int spawnLimit;
 
+    public int[] spawnLimits;
+    public int[] spawnHealth;
+    public int[] waterAmount;
+
 	public float timeBetweenNextWave = 10f;
 	public int waveNum = 3;
 
-	public int rainAmount = 1;
+	public int rainAmount = 0;
 
 	private int spawnNum = 0;
 	public int currentWave = 0;
+    public int currentEnemyNum = 0;
 
 	private float waveTime;
 	//private float waitTime;
@@ -24,18 +29,25 @@ public class EnemyManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		if (Application.loadedLevelName == "Level3_2" || Application.loadedLevelName == "Level4_2") {
-		
-			waveNum = 4;
+        //if (Application.loadedLevelName == "Level3_2" || Application.loadedLevelName == "Level4_2") {
 
-		} else {
-		
-			waveNum = 3;
-		
-		}
+        //	waveNum = 4;
 
+        //} else {
 
-		waveComing = true;
+        //	waveNum = 3;
+
+        //}
+
+        spawnTime = GameObject.Find("LevelEditor").GetComponent<LevelEditor>().EnemyManager_spawnTime;
+        timeBetweenNextWave = GameObject.Find("LevelEditor").GetComponent<LevelEditor>().EnemyManager_timeBetweenNextWave;
+        spawnLimits = GameObject.Find("LevelEditor").GetComponent<LevelEditor>().EnemyManager_spawnLimits;
+        spawnHealth = GameObject.Find("LevelEditor").GetComponent<LevelEditor>().EnemyManager_spawnHealth;
+        waterAmount = GameObject.Find("LevelEditor").GetComponent<LevelEditor>().EnemyManager_waterAmount;
+
+        waveNum = spawnLimits.Length;
+
+        waveComing = true;
 		waveCome ();
 		//waveComing = false;
 	}
@@ -46,27 +58,19 @@ public class EnemyManager : MonoBehaviour {
 		if (currentWave>=waveNum)
 			return;
 
-//		if (waveComing) {
-//		
-//			waitTime += Time.deltaTime;
-//
-//			if(waitTime >= (spawnLimit) * spawnTime){
-//				spawnNum = 0;
-//				waveComing = false;
-//				waitTime = 0;
-//			}
-//
-//		}
-
 		if (!waveComing) {
-			
-			waveTime += Time.deltaTime;
-			
-			if(waveTime >= timeBetweenNextWave){
-				waveComing = true;
-				waveCome();
-				waveTime = 0;
-			}
+
+            if(currentEnemyNum <= 0){
+
+                waveTime += Time.deltaTime;
+
+                if (waveTime >= timeBetweenNextWave)
+                {
+                    waveComing = true;
+                    waveCome();
+                    waveTime = 0;
+                }
+            }
 		}
 
 	}
@@ -81,18 +85,22 @@ public class EnemyManager : MonoBehaviour {
 		}
 
 		int spawnPointIndex = Random.Range (0, spawnPoints.Length);
-		Instantiate (enemy, spawnPoints [spawnPointIndex].position, spawnPoints [spawnPointIndex].rotation);
-
-		rainAmount += enemy.transform.GetComponent<EnemyInfo> ().waterAmount;
+		GameObject currentEnemy = (GameObject)Instantiate (enemy, spawnPoints [spawnPointIndex].position, spawnPoints [spawnPointIndex].rotation);
+        currentEnemy.transform.GetComponent<EnemyHealth>().health = spawnHealth[currentWave-1];
+        currentEnemy.transform.GetComponent<EnemyInfo>().waterAmount = waterAmount[currentWave - 1];
+        rainAmount += currentEnemy.transform.GetComponent<EnemyInfo> ().waterAmount;
 
 		spawnNum++;
-	}
+        currentEnemyNum++;
+
+    }
 
 	void waveCome(){
 	
 		if (!waveComing)
 			return;
 
+        spawnLimit = spawnLimits[currentWave];
 		InvokeRepeating ("Spawn", spawnTime, spawnTime);
 		currentWave++;
 	
