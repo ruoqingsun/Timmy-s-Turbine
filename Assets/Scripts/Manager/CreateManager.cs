@@ -90,5 +90,11 @@ public class CreateManager : MonoBehaviour {
 		this.cost = cost;
 		
 	}
+    public void finishCreatePump()
+    {
+        creating = false;
+        PumpCreate.anyButtonCreate = false;
+        currentButton.GetComponent<PumpCreate>().creating = false;
+    }
 
 }

@@ -125,11 +125,43 @@ public class GridInfo : InfoItem {
 			//Create Pump here
 			else if(createType == CreateManager.createType.pump)
 			{
-				
-			}
-			
-			//Create Transformer here
-			else if(createType == CreateManager.createType.transformer)
+                Transform newTransform = createManager.newTransform;
+                Quaternion rotation = createManager.rotation;
+                int cost = createManager.cost;
+                float pumpTimeBetween = createManager.pumpTimeBetween;
+                Vector3 pos = transform.position;
+                pos.y += 1;
+                Transform newObject = (Transform)Instantiate(newTransform, pos, rotation);
+
+                PumpInfo newPumpInfo = newObject.GetComponent<PumpInfo>();
+                newPumpInfo.pumpTimeBetween = pumpTimeBetween;
+                newPumpInfo.cost = cost;
+                newPumpInfo.x = x;
+                newPumpInfo.z = z;
+
+                if (MoneyManager.money < cost)
+                {
+                    createManager.finishCreatePump();
+                    Destroy(newObject.gameObject);
+                }
+                else {
+                    MoneyManager.money -= cost;
+                    
+                    createManager.finishCreatePump();
+                    TerrainInfo.placeItemInfo[x, z] = 1;
+                }
+
+
+
+
+
+
+
+
+            }
+
+            //Create Transformer here
+            else if(createType == CreateManager.createType.transformer)
 			{
 				
 			}
