@@ -97,7 +97,7 @@ public class GridInfo : InfoItem {
 				Vector3 pos = transform.position;
 				pos.y += 1;
 				Transform newObject = (Transform)Instantiate(newTransform, pos, rotation);
-				
+            
 				TurbineInfo newTurbineInfo = newObject.GetComponent<TurbineInfo> ();
 				
 				newTurbineInfo.maxOutput = maxOutput;
@@ -131,9 +131,13 @@ public class GridInfo : InfoItem {
                 float pumpTimeBetween = createManager.pumpTimeBetween;
                 Vector3 pos = transform.position;
                 pos.y += 1;
+
                 Transform newObject = (Transform)Instantiate(newTransform, pos, rotation);
+             
 
                 PumpInfo newPumpInfo = newObject.GetComponent<PumpInfo>();
+                
+
                 newPumpInfo.pumpTimeBetween = pumpTimeBetween;
                 newPumpInfo.cost = cost;
                 newPumpInfo.x = x;
@@ -151,23 +155,55 @@ public class GridInfo : InfoItem {
                     TerrainInfo.placeItemInfo[x, z] = 1;
                 }
 
-
-
-
-
-
-
-
             }
 
             //Create Transformer here
-            else if(createType == CreateManager.createType.transformer)
+            else if(createType == CreateManager.createType.transformerA)
 			{
-				
-			}
-			
-			
-		}
+                Transform newTransform = createManager.newTransform;
+                Quaternion rotation = createManager.rotation;
+                int cost = createManager.cost;
+                Vector3 pos = transform.position;
+                pos.y += 1;
+                
+                Transform newObject = (Transform)Instantiate(newTransform, pos, rotation);
+
+                if (MoneyManager.money < cost)
+                {
+                    createManager.finishCreateTransformer();
+                    Destroy(newObject.gameObject);
+                }
+                else {
+                    MoneyManager.money -= cost;
+
+                    createManager.finishCreateTransformer();
+                    TerrainInfo.placeItemInfo[x, z] = 1;
+                }
+            }
+            else if (createType == CreateManager.createType.transformerB)
+            {
+                Transform newTransform = createManager.newTransform;
+                Quaternion rotation = createManager.rotation;
+                int cost = createManager.cost;
+                Vector3 pos = transform.position;
+                pos.y += 1;
+
+                Transform newObject = (Transform)Instantiate(newTransform, pos, rotation);
+
+                if (MoneyManager.money < cost)
+                {
+                    createManager.finishCreateTransformer();
+                    Destroy(newObject.gameObject);
+                }
+                else {
+                    MoneyManager.money -= cost;
+
+                    createManager.finishCreateTransformer();
+                    TerrainInfo.placeItemInfo[x, z] = 1;
+                }
+            }
+
+        }
 		
 		if (!creating) {
 			GameObject.FindGameObjectWithTag ("screens").GetComponent<CustomizationSwitch> ().toSelectionP ();

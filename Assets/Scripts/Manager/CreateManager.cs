@@ -26,7 +26,7 @@ public class CreateManager : MonoBehaviour {
 	public static int turbineNumLimit = 1000;
 
 	//0: Turbine; 1: transfomrer; 2: pump
-	public enum createType {turbine, transformer, pump} ;
+	public enum createType {turbine, transformerA, transformerB, pump} ;
 
 	public createType currentType;
 
@@ -68,20 +68,48 @@ public class CreateManager : MonoBehaviour {
 	}
 
 	//Not well defined
-	public void createTransformer(Transform newObject, Quaternion newRotation, int cost, Transform button){
-		
-		creating = true;
-		currentType = createType.transformer;
+	public void createTransformerA(Transform newObject, Quaternion newRotation, int cost, Transform button){
+
+        currentButton = button;
+        currentButton.GetComponent<TransformerACreate>().creating = true;
+
+        creating = true;
+
+		currentType = createType.transformerA;
 		newTransform = newObject;
 		rotation = newRotation;
 
 		this.cost = cost;
 	}
+    public void createTransformerB(Transform newObject, Quaternion newRotation, int cost, Transform button)
+    {
+
+        currentButton = button;
+        currentButton.GetComponent<TransformerBCreate>().creating = true;
+
+        creating = true;
+
+        currentType = createType.transformerB;
+        newTransform = newObject;
+        rotation = newRotation;
+
+        this.cost = cost;
+    }
+    public void finishCreateTransformer()
+    {
+        creating = false;
+        currentButton.GetComponent<TransformerACreate>().creating = false;
+        currentButton.GetComponent<TransformerBCreate>().creating = false;
+    }
 
 	//Not well defined
 	public void createPump(Transform newObject, Quaternion newRotation, float pumpTimeBetween, int cost, Transform button){
-		
-		creating = true;
+
+        currentButton = button;
+        currentButton.GetComponent<PumpCreate>().creating = true;
+   
+
+        creating = true;
 		currentType = createType.pump;
 		newTransform = newObject;
 		rotation = newRotation;
@@ -93,8 +121,9 @@ public class CreateManager : MonoBehaviour {
     public void finishCreatePump()
     {
         creating = false;
-        PumpCreate.anyButtonCreate = false;
         currentButton.GetComponent<PumpCreate>().creating = false;
+
     }
+
 
 }

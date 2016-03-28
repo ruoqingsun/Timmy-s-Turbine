@@ -41,11 +41,12 @@ public class PumpCreate : MonoBehaviour {
 		}*/
 	}
 
-    public void OnPointerClick(PointerEventData eventData)
+    /*public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             GameObject.FindGameObjectWithTag("createManager").GetComponent<CreateManager>().createPump(pump, rotation, pumpTimeBetween, cost, transform);
+            Debug.Log("Hello");
         }
         else if (eventData.button == PointerEventData.InputButton.Middle)
         {
@@ -56,15 +57,10 @@ public class PumpCreate : MonoBehaviour {
             //			Debug.Log ("Right click");
            
         }
-    }
+    }*/
 
     public void createPump()
     {
        GameObject.FindGameObjectWithTag("createManager").GetComponent<CreateManager>().createPump(pump, rotation, pumpTimeBetween, cost, transform);
-        if (creating || WindTurbineBtnInfo.anyButtonCreate)
-        {
-            anyButtonCreate = false;
-            GameObject.FindGameObjectWithTag("createManager").GetComponent<CreateManager>().finishCreatePump();
-        }
     }
 }

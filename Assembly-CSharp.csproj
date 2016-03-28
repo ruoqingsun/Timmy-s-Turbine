@@ -101,6 +101,8 @@
      <Compile Include="Assets\Scripts\UIPanelSwitching\RepairManager.cs" />
      <Compile Include="Assets\Scripts\UIPanelSwitching\SellManager.cs" />
      <Compile Include="Assets\Scripts\UIPumpSelection\PumpCreate.cs" />
+     <Compile Include="Assets\Scripts\UITransformerSelection\TransformerACreate.cs" />
+     <Compile Include="Assets\Scripts\UITransformerSelection\TransformerBCreate.cs" />
      <Compile Include="Assets\Scripts\UIWindTurbineSelection\PowerInfo.cs" />
      <Compile Include="Assets\Scripts\UIWindTurbineSelection\WindCustomizationPanelInfo.cs" />
      <Compile Include="Assets\Scripts\UIWindTurbineSelection\WindTurbineBtnInfo.cs" />
