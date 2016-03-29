@@ -71,7 +71,7 @@ public class WindTurbineBtnInfo : InfoItem, IPointerClickHandler {
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		if (eventData.button == PointerEventData.InputButton.Left) {
+        if (eventData.button == PointerEventData.InputButton.Left) {
 			GameObject.FindGameObjectWithTag ("createManager").GetComponent<CreateManager> ().createTurbine (windTurbine, rotation, maxOutput,directionIndex, cost, transform, timeForWork, turbineColor);
 			GameObject.FindGameObjectWithTag ("screens").GetComponent<CustomizationSwitch> ().toSelectionP ();
 			GameObject.FindGameObjectWithTag ("selectionPanel").GetComponent<InfoPanel> ().UpdateInfo (transform.GetComponent<WindTurbineBtnInfo>());
