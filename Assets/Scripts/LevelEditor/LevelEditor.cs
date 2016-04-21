@@ -1,7 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class LevelEditor : MonoBehaviour {
+[Serializable]
+public class EnemyManagerEditor
+{
+    public int spawnLimit;
+    public int spawnHealth;
+    public int waterAmount;
+}
+
+public class LevelEditor : MonoBehaviour
+{
 
     public bool GridInfo_showInfo;
 
@@ -11,8 +21,6 @@ public class LevelEditor : MonoBehaviour {
 
     public float EnemyManager_spawnTime;
     public float EnemyManager_timeBetweenNextWave;
-    public int[] EnemyManager_spawnLimits;
-    public int[] EnemyManager_spawnHealth;
-    public int[] EnemyManager_waterAmount;
+    public EnemyManagerEditor[] EnemyEditor;
 
 }
