@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B5796E4-B4AC-F526-FEE3-FC0BBB52FD21}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Web v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>WebPlayer:6</UnityBuildTarget>
+    <UnityVersion>5.3.4f1</UnityVersion>
+    <RootNamespace></RootNamespace>
+    <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_4;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_WEBPLAYER;ENABLE_SUBSTANCE;WEBPLUG;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;CROSS_PLATFORM_INPUT</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_4;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_WEBPLAYER;ENABLE_SUBSTANCE;WEBPLUG;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;CROSS_PLATFORM_INPUT</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Timmys-Turbine.CSharp.Plugins.csproj">
+      <Project>{40FA29F9-1EED-A62C-FDF2-A31F9E67BEA5}</Project>
+      <Name>Timmys-Turbine.CSharp.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Scripts\Begin\beginUI.cs" />
+    <Compile Include="Assets\Scripts\CameraMoving.cs" />
+    <Compile Include="Assets\Scripts\EndGameManager\CurrentLevel.cs" />
+    <Compile Include="Assets\Scripts\EndGameManager\Destroy.cs" />
+    <Compile Include="Assets\Scripts\EndGameManager\GameEnd.cs" />
+    <Compile Include="Assets\Scripts\EndGameManager\KilledDrops.cs" />
+    <Compile Include="Assets\Scripts\EndGameManager\LevelPass.cs" />
+    <Compile Include="Assets\Scripts\EndGameManager\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\EndGameManager\OpenMenu.cs" />
+    <Compile Include="Assets\Scripts\EndGameManager\Restart.cs" />
+    <Compile Include="Assets\Scripts\EndGameManager\ScoreShowing.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyHealthBar.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyInfo.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyMoving.cs" />
+    <Compile Include="Assets\Scripts\LevelEditor\LevelEditor.cs" />
+    <Compile Include="Assets\Scripts\Manager\CreateManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\EnemyManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\InfoItem.cs" />
+    <Compile Include="Assets\Scripts\Manager\InfoPanel.cs" />
+    <Compile Include="Assets\Scripts\Manager\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\VisualizationManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\Volume.cs" />
+    <Compile Include="Assets\Scripts\Manager\WaterCountManager.cs" />
+    <Compile Include="Assets\Scripts\Terrain\GridInfo.cs" />
+    <Compile Include="Assets\Scripts\Terrain\TerrainInfo.cs" />
+    <Compile Include="Assets\Scripts\Transformer\TransformerInfo.cs" />
+    <Compile Include="Assets\Scripts\Transformer\TransformerWorking.cs" />
+    <Compile Include="Assets\Scripts\Transformer\powerLineInfo.cs" />
+    <Compile Include="Assets\Scripts\TransformerForTurbine\TransformerForTurbineInfo.cs" />
+    <Compile Include="Assets\Scripts\TransformerForTurbine\TransformerForTurbineWorking.cs" />
+    <Compile Include="Assets\Scripts\Turbine\TurbineHealth.cs" />
+    <Compile Include="Assets\Scripts\Turbine\TurbineInfo.cs" />
+    <Compile Include="Assets\Scripts\Turbine\TurbineWorking.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\Arrow.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\NextStep.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\Question.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\SkipTutorial.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\Timage1.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\Tutorial.cs" />
+    <Compile Include="Assets\Scripts\UICondition\ConditionManager.cs" />
+    <Compile Include="Assets\Scripts\UICondition\EnemyCountManager.cs" />
+    <Compile Include="Assets\Scripts\UICondition\MoneyManager.cs" />
+    <Compile Include="Assets\Scripts\UICondition\OutputManager.cs" />
+    <Compile Include="Assets\Scripts\UICondition\RainManager.cs" />
+    <Compile Include="Assets\Scripts\UICondition\WindManager.cs" />
+    <Compile Include="Assets\Scripts\UICustomization\BladSelection.cs" />
+    <Compile Include="Assets\Scripts\UICustomization\CreateResultManager.cs" />
+    <Compile Include="Assets\Scripts\UICustomization\LockUI.cs" />
+    <Compile Include="Assets\Scripts\UICustomization\PowertrainSelection.cs" />
+    <Compile Include="Assets\Scripts\UIGameplay\acceleration.cs" />
+    <Compile Include="Assets\Scripts\UIGameplay\gamePlay.cs" />
+    <Compile Include="Assets\Scripts\UIPanelSwitching\CustomizationSwitch.cs" />
+    <Compile Include="Assets\Scripts\UIPanelSwitching\RepairManager.cs" />
+    <Compile Include="Assets\Scripts\UIPanelSwitching\SellManager.cs" />
+    <Compile Include="Assets\Scripts\UIWindTurbineSelection\PowerInfo.cs" />
+    <Compile Include="Assets\Scripts\UIWindTurbineSelection\WindCustomizationPanelInfo.cs" />
+    <Compile Include="Assets\Scripts\UIWindTurbineSelection\WindTurbineBtnInfo.cs" />
+    <Compile Include="Assets\Scripts\pump\PumpAttacking.cs" />
+    <Compile Include="Assets\Scripts\pump\PumpInfo.cs" />
+    <Compile Include="Assets\SetTexture.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\license.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
+</Project>

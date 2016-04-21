@@ -11,6 +11,7 @@ public class EnemyManager : MonoBehaviour {
     public int[] spawnLimits;
     public int[] spawnHealth;
     public int[] waterAmount;
+    public EnemyManagerEditor[] enemyEitor;
 
 	public float timeBetweenNextWave = 10f;
 	public int waveNum = 3;
@@ -29,27 +30,23 @@ public class EnemyManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        //if (Application.loadedLevelName == "Level3_2" || Application.loadedLevelName == "Level4_2") {
-
-        //	waveNum = 4;
-
-        //} else {
-
-        //	waveNum = 3;
-
-        //}
-
         spawnTime = GameObject.Find("LevelEditor").GetComponent<LevelEditor>().EnemyManager_spawnTime;
         timeBetweenNextWave = GameObject.Find("LevelEditor").GetComponent<LevelEditor>().EnemyManager_timeBetweenNextWave;
-        spawnLimits = GameObject.Find("LevelEditor").GetComponent<LevelEditor>().EnemyManager_spawnLimits;
-        spawnHealth = GameObject.Find("LevelEditor").GetComponent<LevelEditor>().EnemyManager_spawnHealth;
-        waterAmount = GameObject.Find("LevelEditor").GetComponent<LevelEditor>().EnemyManager_waterAmount;
 
-        waveNum = spawnLimits.Length;
+
+        enemyEitor = GameObject.Find("LevelEditor").GetComponent<LevelEditor>().EnemyEditor;
+        waveNum = enemyEitor.Length;
+        spawnLimits = new int[waveNum];
+        spawnHealth = new int[waveNum];
+        waterAmount = new int[waveNum];
+        for (int i = 0; i < waveNum; i++) {
+            spawnLimits[i] = enemyEitor[i].spawnLimit;
+            spawnHealth[i] = enemyEitor[i].spawnHealth;
+            waterAmount[i] = enemyEitor[i].waterAmount;
+        }
 
         waveComing = true;
 		waveCome ();
-		//waveComing = false;
 	}
 	
 	// Update is called once per frame
